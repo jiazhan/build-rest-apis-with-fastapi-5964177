@@ -17,7 +17,9 @@ def matches(record: LogRecord, start: datetime, end: datetime, level: str):
         return False
 
     if level is None:
+        # print('level None is matched')
         return True
+
     return record.level == level
 
 

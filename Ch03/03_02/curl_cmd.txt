@@ -1,0 +1,15 @@
+# To post a new sale, ensure your FastAPI server is running (e.g., by executing: uvicorn server:app --reload). 
+# Then, use the following curl command:
+curl -X POST "http://127.0.0.1:8000/sales/" \
+-H "Content-Type: application/json" \
+-d '{
+  "time": "2025-11-21T12:00:00Z",
+  "customer_id": "cust123",
+  "sku": "item_A",
+  "amount": 2,
+  "price": 25.50
+}'
+
+# To get a sale from the database, use the following curl command. 
+# Replace 'YOUR_SALE_KEY' with the key returned from the POST request.
+curl "http://127.0.0.1:8000/sales/YOUR_SALE_KEY"
